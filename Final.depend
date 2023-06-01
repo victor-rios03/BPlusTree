@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1685580403 source:c:\users\gusta\onedrive - universidad de sonora\cuarto semestre\estructura de datos\clase grafica\final\main.cpp
+	<iostream>
+	"BPlusTree.h"
+
+1685579889 c:\users\gusta\onedrive - universidad de sonora\cuarto semestre\estructura de datos\clase grafica\final\bplustree.h
+	<stdio.h>
+	"BPlusTree.tpp"
+
+1685580413 c:\users\gusta\onedrive - universidad de sonora\cuarto semestre\estructura de datos\clase grafica\final\bplustree.tpp
+
+1685602846 source:c:\users\gusta\onedrive - universidad de sonora\cuarto semestre\estructura de datos\final\main.cpp
+	<iostream>
+	"FuncionesDeGestion.h"
+	<iostream>
+	"FuncionesDeGestion.h"
+	"Utilerias.h"
+	"BPlusTree.h"
+
+1685601893 c:\users\gusta\onedrive - universidad de sonora\cuarto semestre\estructura de datos\final\bplustree.h
+	<stdio.h>
+	"BPlusTree.tpp"
+
+1685638169 c:\users\gusta\onedrive - universidad de sonora\cuarto semestre\estructura de datos\final\bplustree.tpp
+
+1685603220 source:c:\users\gusta\onedrive - universidad de sonora\cuarto semestre\estructura de datos\final\funcionesdegestion.cpp
+	"FuncionesDeGestion.h"
+	"BPlusTree.h"
+	"math.h"
+	<string.h>
+
+1685602504 c:\users\gusta\onedrive - universidad de sonora\cuarto semestre\estructura de datos\final\funcionesdegestion.h
+	<iostream>
+	<cstdlib>
+	<new>
+	<limits>
+	<cctype>
+	<windows.h>
+	<conio.h>
+	"Utilerias.h"
+	"BPlusTree.h"
+
+1685494864 c:\users\gusta\onedrive - universidad de sonora\cuarto semestre\estructura de datos\final\utilerias.h
+	<windows.h>
+
+1685602906 source:c:\users\gusta\onedrive - universidad de sonora\cuarto semestre\estructura de datos\final\utilerias.cpp
+	<iostream>
+	<limits>
+	"Utilerias.h"
+

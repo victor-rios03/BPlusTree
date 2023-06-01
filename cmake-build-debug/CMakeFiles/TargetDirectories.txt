@@ -1,0 +1,3 @@
+C:/Users/03vic/Documents/universidad/cuarto_semestre/estructura_de_datos/BPlusTreeC++/cmake-build-debug/CMakeFiles/BPlusTree.dir
+C:/Users/03vic/Documents/universidad/cuarto_semestre/estructura_de_datos/BPlusTreeC++/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/03vic/Documents/universidad/cuarto_semestre/estructura_de_datos/BPlusTreeC++/cmake-build-debug/CMakeFiles/rebuild_cache.dir

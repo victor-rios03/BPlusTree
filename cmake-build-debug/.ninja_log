@@ -1,0 +1,9 @@
+# ninja log v5
+96	2161	7073440694653709	CMakeFiles/BPlusTree.dir/main.cpp.obj	266e0007415b8301
+184	2221	7073440695243503	CMakeFiles/BPlusTree.dir/Utilerias.cpp.obj	b344a27cd3cbdcad
+0	2334	7073440696388139	CMakeFiles/BPlusTree.dir/FuncionesDeGestion.cpp.obj	909200ca76915776
+2335	2490	7073440697872617	BPlusTree.exe	d81c1fdaca6a02b5
+10	2852	7073445843520730	CMakeFiles/BPlusTree.dir/Utilerias.cpp.obj	623415adaa455dcd
+4	2935	7073445844258760	CMakeFiles/BPlusTree.dir/FuncionesDeGestion.cpp.obj	1390ad81adcba336
+16	2938	7073445844557960	CMakeFiles/BPlusTree.dir/main.cpp.obj	9ae22ed745a9947c
+2938	3136	7073445846597608	BPlusTree.exe	d81c1fdaca6a02b5
