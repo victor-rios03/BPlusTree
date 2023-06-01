@@ -1,8 +1,6 @@
 #ifndef BPLUSTREE_H_INCLUDED
 #define BPLUSTREE_H_INCLUDED
 
-#include <stdio.h>
-
 template <typename T, int Order>
 class BPlusTree{
 public:
@@ -10,9 +8,9 @@ public:
     ~BPlusTree();
     BPlusTree(const BPlusTree &bPT);
     BPlusTree & operator=(const BPlusTree &bPT);
-    void insert(T elemento);
-    void remove(T elemento);
-    bool find(T elemento);
+    void insert(T value);
+    void remove(T value);
+    bool find(T value);
     bool empty() const;
     void clear();
     void print();
@@ -38,13 +36,20 @@ private:
     /**> Key storage */
     struct Record{
         T value;
-        Record(T v) : value(v){}
+        explicit Record(T v) : value(v){}
     };
     /**> Basic functions */
     Node * insert(Node * root, T key, T value);
+
+    /**
+     * @brief Deletes a key in the tree
+     * @param root Root node of the tree
+     * @param key Key's value to be deleted
+     * @return Tree's root with the deleted node
+     */
     Node * remove(Node *root, T key);
     Record * find(Node * root, T key, Node ** leafOut);
-    void printTree(Node * const root);
+    void printTree(Node * root);
 
     /**> Insert functions */
     Node * insertIntoNode(Node * root, Node * parent, int leftIndex, T key, Node * right);
@@ -54,28 +59,74 @@ private:
     Node * insertIntoLeafAfterSplitting(Node * root, Node * leaf, T key, Record * pointer);
 
     /**> Remove functions */
+
+    /**
+     * @brief Deletes an entry from the tree.
+     * Removes the record and its key from the leaf, and makes all changes
+     * to the structure of the tree
+     * @param root Root node of the tree
+     * @param n Leaf where the entry is
+     * @param key Key's value to be deleted
+     * @param pointer Used to determine the number of pointers
+     * @return Leaf with deleted entry
+     */
     Node * removeEntry(Node * root, Node *n, T key, void * pointer);
     Node * removeEntryFromNode(Node * n, T key, void * pointer);
     void destroyTreeNodes(Node * root);
 
     /**> Find functions */
-    Node * findLeaf(Node * const root, T key);
+    Node * findLeaf(Node * root, T key);
 
     /**> Create functions */
     Node * makeLeaf();
 
     /**> Auxiliar functions */
+
+    /**
+     * @brief Adjusts the root if necessary
+     * @param root Root node of the tree
+     * @return New root node
+     */
     Node * adjustRoot(Node *root);
+
+    /**
+     * @brief Merge nodes that is too small with a neighbouring node
+     * @param root Root node of the tree
+     * @param n Node to search for neighbor
+     * @param neighbor Neighbor node
+     * @param neighbor_index Index value of the neighbor
+     * @param k_prime First key in the leaf node
+     * @return Merged node
+     */
     Node * coalesceNodes(Node *root, Node *n, Node *neighbor, int neighborIndex, T kPrime);
+
+    /**
+     * @brief Redistributes entries between two nodes
+     * @param root Root node of the tree
+     * @param n Node to search for neighbor
+     * @param neighbor Neighbor node
+     * @param neighbor_index Index value of the neighbor
+     * @param k_prime_index Index value of the first key
+     * @param k_prime First key in the leaf node
+     * @return Nodes with redistributed entries
+     */
     Node * redistributeNodes(Node *root, Node *n, Node *neighbor, int neighborIndex, int kPrimeIndex, T kPrime);
+
+    /**
+     * @brief Gets the index of a node's nearest neighbor to the left if it exists, else
+     * returns -1
+     * @param n Node to search neighbor
+     * @return Index of n node's nearest neighbor
+     */
     int getNeighborIndex(Node *n);
     int getLeftIndex(Node * parent, Node * left) const;
     int cut(int length) const;
-    int pathToRoot(Node * const root, Node * child);
+    int pathToRoot(Node * root, Node * child);
     void copyTree(Node *root);
 
 
     Node * queue;   /**> The queue is used in the print method */
+
     /** > Queue functions */
     void enqueue(Node * newNode);
     Node * dequeue();
