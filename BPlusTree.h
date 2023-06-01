@@ -72,6 +72,7 @@ private:
     int getLeftIndex(Node * parent, Node * left) const;
     int cut(int length) const;
     int pathToRoot(Node * const root, Node * child);
+    void copyTree(Node *root);
 
 
     Node * queue;   /**> The queue is used in the print method */
