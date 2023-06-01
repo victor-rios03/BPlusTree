@@ -22,7 +22,7 @@ template <typename T, int Order>
 BPlusTree<T,Order> & BPlusTree<T,Order>::operator=(const BPlusTree<T,Order> &bPT){
     if(this == &bPT) return *this;
     clear();
-    // COPIAR.
+    copyTree(bPT.root);
     return *this;
 }
 // -------------------------------------------------------------------------------------------------------------------------------------------
@@ -653,6 +653,19 @@ int BPlusTree<T,Order>::pathToRoot(BPlusTree<T,Order>::Node * const root, BPlusT
 // -------------------------------------------------------------------------------------------------------------------------------------------
 
 template <typename T, int Order>
+void BPlusTree<T,Order>::copyTree(BPlusTree<T,Order>::Node * root){
+    if(root != NULL){
+        if(root -> leaf)
+            for(int i = 0; i < root -> size; ++i)
+                insert(root -> keys[i]);
+    else
+        for(int i = 0; i < root -> size + 1; ++i)
+            copyTree((Node*)root -> pointers[i]);
+    }
+}
+// -------------------------------------------------------------------------------------------------------------------------------------------
+
+template <typename T, int Order>
 void BPlusTree<T,Order>::enqueue(BPlusTree<T,Order>::Node * newNode){
 	Node * c;
 	if (queue == NULL) {
@@ -677,4 +690,3 @@ typename BPlusTree<T,Order>::Node * BPlusTree<T,Order>::dequeue(){
 	n -> next = NULL;
 	return n;
 }
-
