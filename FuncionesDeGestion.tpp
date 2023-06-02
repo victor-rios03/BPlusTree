@@ -42,7 +42,7 @@ int startMenu()
         if(kbhit())
         {
             key = getch();
-            if(key == FLECHA_ABAJO && x < 10) x = x + 1;
+            if(key == FLECHA_ABAJO && x < 7) x = x + 1;
             if(key == FLECHA_ARRIBA && x > 1) x = x - 1;
 
             if(x == 1)
@@ -120,8 +120,12 @@ void insertElements(BPlusTree<T, Order> & t)
     cin >> key;
     t.insert(key);
 
+    gotoxy(1,10);
+    t.print();
+
     do{
 
+        gotoxy(1,4);
         cout << " Would you like to add another key? [Y/N]: ";
         string choice;
         cin >> choice;
@@ -143,6 +147,7 @@ void insertElements(BPlusTree<T, Order> & t)
 
     cin.clear();
     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 
     }while(option == 'Y' || option == 'y');
 
@@ -169,7 +174,6 @@ void removeElements(BPlusTree<T, Order> & t)
 
     do{
         T key;
-
         system("cls");
         gotoxy(1,1);
         cout << " Remove key: ";
@@ -177,13 +181,13 @@ void removeElements(BPlusTree<T, Order> & t)
 
     if(t.find(key)){
         gotoxy(1,3);
-        cout << " Key founded for remove " << endl;
-        cout << endl;
-        Sleep(1300);
+        cout << " Key found for remove " << endl;
         t.remove(key);
+        Sleep(1300);
+
     }else{
         gotoxy(1,3);
-        cout << " Key not founded for remove" << endl;
+        cout << " Key not found for remove" << endl;
         cout << endl;
         Sleep(1300);
         system("cls");
@@ -191,7 +195,7 @@ void removeElements(BPlusTree<T, Order> & t)
     }
 
     do{
-
+        gotoxy(1,3);
         cout << " Would you like to remove another key? [Y/N]: ";
         string choice;
         cin >> choice;

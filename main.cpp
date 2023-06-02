@@ -10,7 +10,7 @@ int main()
 
     int option;
 
-    BPlusTree<char, 3> bPT;
+    BPlusTree<int, 3> bPT;
 
 
     enum options {

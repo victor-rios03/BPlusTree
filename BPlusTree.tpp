@@ -155,13 +155,14 @@ void BPlusTree<T,Order>::printTree(BPlusTree<T,Order>::Node * const root){
 	enqueue(root);
 	while(queue != NULL){
 		n = dequeue();
-		if(n -> parent != NULL && n == n -> parent -> pointers[0]){
-			newRank = pathToRoot(root, n);
-			if(newRank != rank){
-				rank = newRank;
-				std::cout << std::endl;
-			}
-		}
+		if(n -> parent != NULL && n == n -> parent -> pointers[0]) {
+            newRank = pathToRoot(root, n);
+            if (newRank != rank) {
+                rank = newRank;
+                std::cout << "]" << std::endl;
+                std::cout << std::endl;
+            }
+        }
 		for(i = 0; i < n -> size; ++i) std::cout << n -> keys[i] << " ";
 		/**> If the node have childrens, enqueue all of his childs */
 		if(!n -> leaf)
