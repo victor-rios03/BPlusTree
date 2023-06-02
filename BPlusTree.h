@@ -4,15 +4,53 @@
 template <typename T, int Order>
 class BPlusTree{
 public:
+    /**
+     * @brief Initializes the root and queue of the B+ Tree
+     */
     BPlusTree();
+    /**
+     * @brief Clears the tree
+     */
     ~BPlusTree();
+    /**
+     * @brief Copies a tree to this tree
+     * @param bPT Tree to copy values from
+     */
     BPlusTree(const BPlusTree &bPT);
+    /**
+     * @brief Match the values from one tree to this
+     * @param bPT Tree to match values from
+     * @return This tree with matched values from other tree
+     */
     BPlusTree & operator=(const BPlusTree &bPT);
+    /**
+     * @brief Inserts a key in the tree
+     * @param value Value of key to insert
+     */
     void insert(T value);
+    /**
+     * @brief Removes a key in the tree
+     * @param value Value of key to remove
+     */
     void remove(T value);
+    /**
+     * @brief Verifies if a key is in the tree
+     * @param value Value of key to find
+     * @return bool Value that indicates if it was found
+     */
     bool find(T value);
+    /**
+     * @brief Verifies if the tree is empty
+     * @return bool Value that indicates if tree is empty
+     */
     bool empty() const;
+    /**
+     * @brief Empties all keys from tree
+     */
     void clear();
+    /**
+     * @brief Prints tree
+     */
     void print();
 private:
     struct Node{

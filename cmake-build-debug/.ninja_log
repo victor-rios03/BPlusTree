@@ -7,3 +7,6 @@
 4	2935	7073445844258760	CMakeFiles/BPlusTree.dir/FuncionesDeGestion.cpp.obj	1390ad81adcba336
 16	2938	7073445844557960	CMakeFiles/BPlusTree.dir/main.cpp.obj	9ae22ed745a9947c
 2938	3136	7073445846597608	BPlusTree.exe	d81c1fdaca6a02b5
+10	1823	7073744925618338	CMakeFiles/BPlusTree.dir/main.cpp.obj	9ae22ed745a9947c
+4	1876	7073744926226706	CMakeFiles/BPlusTree.dir/FuncionesDeGestion.cpp.obj	1390ad81adcba336
+1876	2206	7073744929483525	BPlusTree.exe	d81c1fdaca6a02b5
