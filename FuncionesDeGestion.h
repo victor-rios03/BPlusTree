@@ -37,5 +37,6 @@ void Donnut();
 
 void gotoxy2(SHORT x, SHORT y);
 
+#include "FuncionesDeGestion.tpp"
 
 #endif // FUNCIONESDEGESTION_H_INCLUDED

@@ -49,13 +49,6 @@ cmake_ninja_workdir = C$:/Users/03vic/Documents/universidad/cuarto_semestre/estr
 
 build cmake_object_order_depends_target_BPlusTree: phony || CMakeFiles/BPlusTree.dir
 
-build CMakeFiles/BPlusTree.dir/FuncionesDeGestion.cpp.obj: CXX_COMPILER__BPlusTree_Debug C$:/Users/03vic/Documents/universidad/cuarto_semestre/estructura_de_datos/BPlusTreeC++/FuncionesDeGestion.cpp || cmake_object_order_depends_target_BPlusTree
-  DEP_FILE = CMakeFiles\BPlusTree.dir\FuncionesDeGestion.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++14
-  INCLUDES = -IC:/Users/03vic/Documents/universidad/cuarto_semestre/estructura_de_datos/BPlusTreeC++/.
-  OBJECT_DIR = CMakeFiles\BPlusTree.dir
-  OBJECT_FILE_DIR = CMakeFiles\BPlusTree.dir
-
 build CMakeFiles/BPlusTree.dir/main.cpp.obj: CXX_COMPILER__BPlusTree_Debug C$:/Users/03vic/Documents/universidad/cuarto_semestre/estructura_de_datos/BPlusTreeC++/main.cpp || cmake_object_order_depends_target_BPlusTree
   DEP_FILE = CMakeFiles\BPlusTree.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++14
@@ -78,7 +71,7 @@ build CMakeFiles/BPlusTree.dir/Utilerias.cpp.obj: CXX_COMPILER__BPlusTree_Debug 
 #############################################
 # Link the executable BPlusTree.exe
 
-build BPlusTree.exe: CXX_EXECUTABLE_LINKER__BPlusTree_Debug CMakeFiles/BPlusTree.dir/FuncionesDeGestion.cpp.obj CMakeFiles/BPlusTree.dir/main.cpp.obj CMakeFiles/BPlusTree.dir/Utilerias.cpp.obj
+build BPlusTree.exe: CXX_EXECUTABLE_LINKER__BPlusTree_Debug CMakeFiles/BPlusTree.dir/main.cpp.obj CMakeFiles/BPlusTree.dir/Utilerias.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\BPlusTree.dir

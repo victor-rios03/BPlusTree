@@ -8,7 +8,7 @@ include_directories(.)
 add_executable(BPlusTree
         BPlusTree.h
         BPlusTree.tpp
-        FuncionesDeGestion.cpp
+        FuncionesDeGestion.tpp
         FuncionesDeGestion.h
         main.cpp
         Utilerias.cpp
