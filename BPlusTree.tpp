@@ -360,7 +360,7 @@ typename BPlusTree<T,Order>::Node * BPlusTree<T,Order>::insertIntoLeafAfterSplit
 	for(i = leaf -> size; i < Order - 1; ++i) leaf -> pointers[i] = NULL;
 	for(i = newLeaf -> size; i < Order - 1; i++) newLeaf -> pointers[i] = NULL;
 
-    /**> Recursively update values ​​up the tree */
+    /**> Recursively update values up the tree */
 	newLeaf -> parent = leaf -> parent;
 	T newKey = newLeaf -> keys[0];
 	return insertIntoParent(root, leaf, newKey, newLeaf);
