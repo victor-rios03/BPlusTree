@@ -41,7 +41,7 @@ void BPlusTree<T,Order>::remove(T value){
 
 template <typename T, int Order>
 bool BPlusTree<T,Order>::find(T value){
-	return find(root, value, NULL) != NULL;
+	return find(root, value) != NULL;
 }
 // -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -71,7 +71,7 @@ typename BPlusTree<T,Order>::Node * BPlusTree<T,Order>::insert(BPlusTree<T,Order
     Record * tPointer = NULL;
     Node * leaf = NULL;
     /**> Checks if the key is already in the tree */
-    tPointer = find(root, key, NULL);
+    tPointer = find(root, key);
     if(tPointer != NULL){
         /**> If the key already exists in the tree, update the value and return the tree */
         tPointer -> value = value;
@@ -110,7 +110,7 @@ typename BPlusTree<T, Order>::Node *BPlusTree<T, Order>::remove(BPlusTree::Node 
     Node * leaf = NULL;
     Record * tPointer = NULL;
     /**> Finds the record associated to the key and the leaf where the key is included */
-    tPointer = find(root, key, &leaf);
+    tPointer = find(root, key);
 
     /**> If the key is found in the leaf delete it */
     if (tPointer != NULL && leaf != NULL) {
@@ -122,10 +122,9 @@ typename BPlusTree<T, Order>::Node *BPlusTree<T, Order>::remove(BPlusTree::Node 
 // -------------------------------------------------------------------------------------------------------------------------------------------
 
 template <typename T, int Order>
-typename BPlusTree<T,Order>::Record * BPlusTree<T,Order>::find(BPlusTree<T,Order>::Node * root, T key, BPlusTree<T,Order>::Node ** leafOut) {
+typename BPlusTree<T,Order>::Record * BPlusTree<T,Order>::find(BPlusTree<T,Order>::Node * root, T key) {
     /**> Checks if the tree is null */
     if(root == NULL){
-        if(leafOut != NULL) *leafOut = NULL;
         return NULL;
     }
 
@@ -135,7 +134,6 @@ typename BPlusTree<T,Order>::Record * BPlusTree<T,Order>::find(BPlusTree<T,Order
     /**> In this loop search if the value is in the keys */
     int i;
 	for(i = 0; i < leaf -> size; ++i) if(leaf -> keys[i] == key) break; /**> Stops in the index of the key ; otherwise reach the limit */
-    if (leafOut != NULL) *leafOut = leaf;
 
     /**> If the index reaches the limit it means that does not found the value */
 	if (i == leaf -> size) return NULL;
@@ -448,7 +446,7 @@ typename BPlusTree<T,Order>::Node * BPlusTree<T,Order>::findLeaf(BPlusTree<T,Ord
     if(root == NULL) return root;
     /**> Iterates through the keys of the node to find the child
          where the key is presumed to be. It continues in this way
-         until it meets the leaf of the tree (Where the range of values ​​
+         until it meets the leaf of the tree (Where the range of values
          encloses the value sought) */
 	int i = 0;
 	Node * auxNode = root;

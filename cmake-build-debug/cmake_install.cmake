@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/03vic/Documents/universidad/cuarto_semestre/estructura_de_datos/BPlusTreeC++
+# Install script for directory: C:/Users/Santy/CLionProjects/insaneproyect
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/03vic/Documents/universidad/cuarto_semestre/estructura_de_datos/BPlusTreeC++/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Santy/CLionProjects/insaneproyect/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

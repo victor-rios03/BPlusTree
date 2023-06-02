@@ -48,7 +48,17 @@ private:
      * @return Tree's root with the deleted node
      */
     Node * remove(Node *root, T key);
-    Record * find(Node * root, T key, Node ** leafOut);
+    /**
+     * @brief Finds a key and returns its value,
+     * @param root Root of the tree
+     * @param key Key to be found
+     * @return Pointer to the value, NULL if not found
+     */
+    Record * find(Node * root, T key);
+    /**
+     * @brief Prints the tree per level
+     * @param root Root of the tree
+     */
     void printTree(Node * root);
 
     /**> Insert functions */
@@ -75,9 +85,19 @@ private:
     void destroyTreeNodes(Node * root);
 
     /**> Find functions */
+    /**
+     * @brief Returns a pointer to a leaf where the key is located
+     * @param root Root of the tree
+     * @param key Key to be looked for
+     * @return Pointer to the leaf that contains the key, NULL if the leaf is not found
+     */
     Node * findLeaf(Node * root, T key);
 
     /**> Create functions */
+    /**
+     * @brief Creates a leaf node
+     * @return Pointer to leaf node created
+     */
     Node * makeLeaf();
 
     /**> Auxiliar functions */
@@ -120,7 +140,18 @@ private:
      */
     int getNeighborIndex(Node *n);
     int getLeftIndex(Node * parent, Node * left) const;
+    /**
+     * @brief Calculates de index of where the split should be done
+     * @param length Length of the node
+     * @return Index of where the cut should be done
+     */
     int cut(int length) const;
+    /**
+     * @brief Returns the height of the node passed
+     * @param root Root of the tree
+     * @param child Child whose height wants to be calculated
+     * @return Height of the subtree
+     */
     int pathToRoot(Node * root, Node * child);
     void copyTree(Node *root);
 
@@ -128,7 +159,15 @@ private:
     Node * queue;   /**> The queue is used in the print method */
 
     /** > Queue functions */
+    /**
+     * @brief Queues a new node to the queue
+     * @param newNode Node to be enqueued
+     */
     void enqueue(Node * newNode);
+    /**
+     * @brief Dequeues a node from the queue
+     * @return Pointer to the dequeued node
+     */
     Node * dequeue();
 };
 
