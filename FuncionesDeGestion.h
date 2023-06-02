@@ -17,19 +17,26 @@
 #define ENTER 13
 
 int startMenu();
-void insertElements(BPlusTree<int,3>& t);
-void removeElements(BPlusTree<int,3>& t);
-void findElements(BPlusTree<int,3>& t);
-void printTree(BPlusTree<int,3>& t);
-void clearTree(BPlusTree<int,3>& t);
+
+template<typename T, int Order>
+void insertElements(BPlusTree<T, Order> &t);
+
+template<typename T, int Order>
+void removeElements(BPlusTree<T, Order> &t);
+
+template<typename T, int Order>
+void findElements(BPlusTree<T, Order> &t);
+
+template<typename T, int Order>
+void printTree(BPlusTree<T, Order> &t);
+
+template<typename T, int Order>
+void clearTree(BPlusTree<T, Order> &t);
+
 void Donnut();
+
 void gotoxy2(SHORT x, SHORT y);
 
-
-
-
-
-
-
+#include "FuncionesDeGestion.tpp"
 
 #endif // FUNCIONESDEGESTION_H_INCLUDED

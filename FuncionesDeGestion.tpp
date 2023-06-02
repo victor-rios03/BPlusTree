@@ -104,7 +104,8 @@ int startMenu()
 
 }
 
-void insertElements(BPlusTree<int,3> & t)
+template<typename T, int Order>
+void insertElements(BPlusTree<T, Order> & t)
 {
    char option;
    CambiaCursor(ENCENDIDO, NORMAL);
@@ -112,7 +113,7 @@ void insertElements(BPlusTree<int,3> & t)
     do{
     system("cls");
     gotoxy(1,1);
-    int key;
+    T key;
 
     gotoxy(1,1);
     cout << " Insert key: ";
@@ -150,7 +151,8 @@ void insertElements(BPlusTree<int,3> & t)
 
 }
 
-void removeElements(BPlusTree<int,3> & t)
+template<typename T, int Order>
+void removeElements(BPlusTree<T, Order> & t)
 {
     char option;
     CambiaCursor(ENCENDIDO, NORMAL);
@@ -166,7 +168,7 @@ void removeElements(BPlusTree<int,3> & t)
     }
 
     do{
-        int key;
+        T key;
 
         system("cls");
         gotoxy(1,1);
@@ -217,10 +219,10 @@ void removeElements(BPlusTree<int,3> & t)
     gotoxy(1,1);
     system("cls");
 
-
 }
 
-void findElements(BPlusTree<int,3> & t)
+template<typename T, int Order>
+void findElements(BPlusTree<T, Order> & t)
 {
     char option;
     CambiaCursor(ENCENDIDO, NORMAL);
@@ -228,7 +230,7 @@ void findElements(BPlusTree<int,3> & t)
     do{
     system("cls");
     gotoxy(1,1);
-    int key;
+    T key;
 
     gotoxy(1,2);
     cout << " Search key: ";
@@ -237,7 +239,7 @@ void findElements(BPlusTree<int,3> & t)
 
     if(t.find(key)){
         gotoxy(1,3);
-        cout << " Key founded! :) " << endl;
+        cout << " Key found! :) " << endl;
         cout << endl;
         Sleep(500);
     }else{
@@ -277,7 +279,8 @@ void findElements(BPlusTree<int,3> & t)
     system("cls");
 }
 
-void printTree(BPlusTree<int,3> & t)
+template<typename T, int Order>
+void printTree(BPlusTree<T, Order> & t)
 {
     CambiaCursor(APAGADO);
     system("cls");
@@ -287,7 +290,8 @@ void printTree(BPlusTree<int,3> & t)
     t.print();
 }
 
-void clearTree(BPlusTree<int,3> & t)
+template<typename T, int Order>
+void clearTree(BPlusTree<T, Order> & t)
 {
     if(t.empty()){
         system("cls");
